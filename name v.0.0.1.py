@@ -1,4 +1,10 @@
-print("\t\t\t Имя v.0.0.1")
+print("\t\t\t Имя v.0.0.2\n")
 name = input("Как тебя зовут? ")
-print("\a")
+
+import winsound
+Freq = 2500            #частота
+Dur = 1000        #длительность
+winsound.Beep(Freq, Dur)
+
+
 print("Привет, ", name)
