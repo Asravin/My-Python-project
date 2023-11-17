@@ -6,7 +6,12 @@ answer = 1
 score = 0
 i = 0
 
+
+
 while answer:
+    if answer == 0:
+        break
+    
     i += 1
     rand = random.randint(1, 10)
     answer = int(input("Число загадано. Попробуй отгдать: "))
