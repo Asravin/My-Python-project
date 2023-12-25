@@ -14,4 +14,4 @@ for tag, *args in records:
     if tag == 'foo':
         do_foo(*args)
     elif tag == 'bar':
-        do_bar(*args)
+        do_bar(*args)   

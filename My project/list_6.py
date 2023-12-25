@@ -7,4 +7,4 @@ print(cars)
 # print(cars)
 
 cars[1 : 2] = ["bentley", "bmw"]
-print(cars)
+print(cars) 
