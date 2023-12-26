@@ -16,17 +16,19 @@ while word != "q":
             print(dict[word])
         else:
             print("Нет такого слова в словаре")
+            
+dict["test"] = "тест"
 
 
-print(dict.get("test", "Нет такого слова в словаре!"))
+# print(dict.get("test", "Нет такого слова в словаре!"))
 
-print(dict)
-print(dict["bus"])
+# print(dict)
+# print(dict["bus"])
 
-for item in dict:
-    print(item, " => ", dict[item])
+# for item in dict:
+#     print(item, " => ", dict[item])
 
-if "bus" in dict:
-    print(dict["bus"])
-else:
-    print("Слова 'bus' нет в словаре!")
+# if "bus" in dict:
+#     print(dict["bus"])
+# else:
+#     print("Слова 'bus' нет в словаре!")
