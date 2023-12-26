@@ -19,6 +19,7 @@ while word != "q":
             
 dict["test"] = "тест"
 
+del dict["bus"]
 
 # print(dict.get("test", "Нет такого слова в словаре!"))
 
