@@ -1,3 +1,5 @@
+print("=" * 15, "Словарь", "=" * 15)
+
 dict = {
     "aplle" : "яблоко",
     "bold" : "жирный",
@@ -6,13 +8,25 @@ dict = {
     "car" : "автомобиль"
 }
 
-print(dict)
-print(dict["bus"])
+word = " "
+while word != "q":
+    word = input("Введите слово или 'q' для выхода: ")
+    if word != "q":
+        if word in dict:
+            print(dict[word])
+        else:
+            print("Нет такого слова в словаре")
 
-for item in dict:
-    print(item, " => ", dict[item])
 
-if "bus" in dict:
-    print(dict["bus"])
-else:
-    print("Слова 'bus' нет в словаре!")
+
+
+# print(dict)
+# print(dict["bus"])
+
+# for item in dict:
+#     print(item, " => ", dict[item])
+
+# if "bus" in dict:
+#     print(dict["bus"])
+# else:
+#     print("Слова 'bus' нет в словаре!")
