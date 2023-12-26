@@ -1,6 +1,7 @@
 print("=" * 15, "Словарь", "=" * 15)
 
-dict = {
+# Словарь заполнен по умолчанию
+dict = {                  
     "aplle" : "яблоко",
     "bold" : "жирный",
     "bus" : "автобус",
@@ -8,28 +9,57 @@ dict = {
     "car" : "автомобиль"
 }
 
-word = " "
-while word != "q":
-    word = input("Введите слово или 'q' для выхода: ")
-    if word != "q":
-        if word in dict:
-            print(dict[word])
-        else:
-            print("Нет такого слова в словаре")
-            
-dict["test"] = "тест"
+# Справка. Будет выведена по команде 'h'
+help_message = """
+s - Поиск слова в словаре
+a - Добавить новое слово
+r - Удалить слово
+k - Вывод всех слов
+d - Вывод всего словаря
+h - Отображение этой подсказки
+q - Выход
+"""
 
-del dict["bus"]
+choice = " "
+while choice != "q":
+    choice = input("(h - справка)>> ")
+    
+# поиск слова в словаре
+    if choice == "s":
+        word = input("Введите слово: ")
+        res = dict.get(word, "Нет такого слова!")
+        print(res)
 
-# print(dict.get("test", "Нет такого слова в словаре!"))
-
-# print(dict)
-# print(dict["bus"])
-
-# for item in dict:
-#     print(item, " => ", dict[item])
-
-# if "bus" in dict:
-#     print(dict["bus"])
-# else:
-#     print("Слова 'bus' нет в словаре!")
+# добавление слова в словарь
+    elif choice == "a":
+        word = input("Введите слово: ")
+        value = input("Введите перевод: ")
+        dict[word] = value
+        print("Слово добавлено!")
+    
+# удаление слов из словаря
+    elif choice == "r":
+        word = input("Введите слово: ")
+        del dict[word]
+        print("Слово ", word, " удалено")
+    
+# вывод всех слов
+    elif choice == "k":
+        print(dict.keys())
+    
+# вывод всего словаря
+    elif choice == "d":
+        for word in dict:
+            print(word, ": ", dict[word])
+    
+# справка
+    elif choice == "h":
+        print(help_message)
+    
+# выход
+    elif choice == "q":
+        continue
+    
+    else:
+        print("Нераспознанная команда. Введите 'h' для справки")
+    
