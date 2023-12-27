@@ -6,3 +6,7 @@ def yn(message):
 
 answer = yn("Форматировать диск? [yes/no] ")
 print("Ваш выбор: ", answer)
+answer = yn("Отправить письмо теще? [yes/no] ")
+print("Ваш выбор: ", answer)
+answer = yn("Заспамить сервер конкурента? [yes/no] ")
+print("Ваш выбор: ", answer)
