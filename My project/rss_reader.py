@@ -17,4 +17,4 @@ def rss_reader(url):
         print(link)
         print()
         
-rss_reader('https://opt-opt-opt.ru/catalog/letnyaya_obuv/gd2016_l01_3_bezh_bosonozhki_zhenskie_36_41_10')
+rss_reader()
