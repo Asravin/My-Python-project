@@ -57,3 +57,8 @@ txt.close()
 
 print()
 
+print("** Перебор строк файла")
+txt = open(r"My project\work in file\text.txt", encoding="utf-8")
+for line in txt:
+    print(line)
+txt.close()
