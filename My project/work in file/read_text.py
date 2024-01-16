@@ -45,3 +45,15 @@ print(txt.readline())          # Строка 2
 txt.close()
 
 print()
+
+print("** Чтение всего файла в список")
+txt = open(r"My project\work in file\text.txt", encoding="utf-8")
+lines = txt.readlines()
+print(lines)                  # Выводим список
+print(len(lines))             # Длина списка
+for line in lines:
+    print(line)
+txt.close()
+
+print()
+
