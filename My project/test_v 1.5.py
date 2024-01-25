@@ -1,5 +1,4 @@
-n = 5
-mark = 0
+import pickle
 questions = ["""
         Коомпания-разработчик Windows
         1) Mikrosft
@@ -36,13 +35,8 @@ questions = ["""
         4) 256
         """]
 answers = [4, 3, 1, 1, 2]
-i = 0
-for i in range(0, n):
-    print(questions[i])
-    a = int(input("Ваш ответ: "))
-    if a == answers[i]:
-        mark += 1
-        print("Правильно!")
-    else:
-        print("Неправильно :)")
-print("Вы правильно ответили на", mark, "вопросов из", n)
+
+datafile = open("test.dat", "wb")
+pickle.dump(questions, datafile)
+pickle.dump(answers, datafile)
+datafile.close
