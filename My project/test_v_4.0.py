@@ -13,10 +13,13 @@ else:
      i = 0
      for i in range(0, n):
           print(questions[i])
-          a = int(input("Ваш ответ: "))
-          if a == answers[i]:
-               mark += 1
-               print("Правильно!")
-          else:
-               print("Неправильно :(")
+          try:
+               a = int(input("Ваш ответ: "))
+               if a == answers[i]:
+                    mark += 1
+                    print("Правильно!")
+               else:
+                    print("Неправильно :(")
+          except:
+               print("Нужно было ввести число. Ответ засчитан как неправильный!")
      print("Вы правильно ответили на ", mark, "вопросов из", n)
