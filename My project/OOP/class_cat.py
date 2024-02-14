@@ -1,8 +1,9 @@
 class Cat(object):
     """Виртуальная кошка"""
     
-    def __init__(self):
+    def __init__(self, name):
         print("Родилась новая кошка!")
+        self.name = name
         
     def talk(self):
-        print("Мяу")
+        print(self.name, ": Мяу")
