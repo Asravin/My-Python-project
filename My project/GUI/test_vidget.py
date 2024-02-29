@@ -18,7 +18,12 @@ lis = Listbox(root, selectmode=SINGLE, height=4)
 for i in r:
     lis.insert(END, i)
 
+win = Toplevel(root, relief=SUNKEN, bd=10, bg="lightblue")
+win.title("Дочернее окно")
+win.minsize(width=400, height=200)
 
+sca1 = Scale(root, orient=HORIZONTAL, length=300, from_=0, to=100, tickinterval=10, resolution=5)
+sca2 = Scale(root, orient=VERTICAL, length=400, from_=1, to=2, tickinterval=0.1, resolution=0.1)
 
 but.pack()
 lab.pack()
@@ -27,4 +32,7 @@ rad0.pack()
 rad1.pack()
 rad2.pack()
 lis.pack()
+sca1.pack()
+sca2.pack()
+win.pack_propagate()
 root.mainloop()
