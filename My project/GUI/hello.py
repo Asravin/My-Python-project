@@ -11,3 +11,4 @@ root.title("Заголовок окна программы")
 root.geometry("300x250")
 but1.pack()
 root.mainloop()
+
