@@ -20,4 +20,4 @@ root.bind('<Button-3>', b3)
 root.bind('<Motion>', move)
 
 
-root,mainloop()
+root.mainloop()
