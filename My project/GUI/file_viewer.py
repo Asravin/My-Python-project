@@ -1,13 +1,13 @@
 from tkinter import *
 from tkinter.filedialog import *
-import fileinput
+from fileinput import *
 
 
-def open():
+def _open():
     global txt 
     op = askopenfilename()
     print(op)
-    f = open(op, "r", encoding='utf-8')
+    f = open(op, "r", encoding="utf-8")
     content = f.read()
     txt.delete(1.0, END)
     txt.insert(END, content)
@@ -19,7 +19,7 @@ root.config(menu=m)
 
 fm = Menu(m)
 m.add_cascade(label="Файл", menu=fm)
-fm.add_command(label="Открыть...", command=open)
+fm.add_command(label="Открыть...", command=_open)
 
 txt = Text(root, width=40, height=15, font="Courier 10")
 txt.pack()
