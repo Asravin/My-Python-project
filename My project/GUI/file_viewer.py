@@ -1,29 +1,27 @@
 from tkinter import *
+from tkinter.filedialog import *
+import fileinput
+
+
+def open():
+    global txt 
+    op = askopenfilename()
+    print(op)
+    f = open(op, "r", encoding='utf-8')
+    content = f.read()
+    txt.delete(1.0, END)
+    txt.insert(END, content)
+
+
 root = Tk()
+m = Menu(root)
+root.config(menu=m)
 
+fm = Menu(m)
+m.add_cascade(label="Файл", menu=fm)
+fm.add_command(label="Открыть...", command=open)
 
-def output(event):
-    s = ent.get()
-    try:
-        txt = open(s, "r", encoding="utf-8")
-        content = txt.read()
-        tex.delete(1.0, END)
-        tex.insert(END, content)
-    except:
-        tex.delete(1.0, END)
-        tex.insert(END, "Файл не существует")
-        
-        
-ent = Entry(root, width=20)
-but = Button(root, text="Открыть")
-tex = Text(root, width=80, height=30, font="Courier 12", wrap=WORD)
-tex.insert(END, "Введите имя текстового файла и нажмите кнопку Открыть")
+txt = Text(root, width=40, height=15, font="Courier 10")
+txt.pack()
 
-
-ent.grid(row=0, column=0)
-but.grid(row=2, column=0)
-tex.grid(row=1, column=0)
-
-
-but.bind("<Button-1>", output)
 root.mainloop()
