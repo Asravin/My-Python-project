@@ -1,6 +1,6 @@
 from tkinter import *
 
-class print(Frame):
+class Print(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
         self.parent = parent
@@ -27,31 +27,32 @@ class print(Frame):
     
          
     def setUI(self):
-        self.parent.tittle("Simple paint")
+        self.parent.title("Simple paint")
         self.pack(fill=BOTH, expand=1)
         self.columnconfigure(6, weight=1)
         self.rowconfigure(2, weight=1)
         self.canv = Canvas(self, bg="white")
         self.canv.grid(row=2, column=0, columnspan=7, padx=5, pady=5, sticky=E+W+S+N)
+        self.canv.bind("<B1-Motion>", self.draw)
     
     
         color_lab = Label(self, text="Цвет: ")
         color_lab.grid(row=0, column=0, padx=6)
     
     
-        red_btn = Button(self, text="Красный", width=10)
+        red_btn = Button(self, text="Красный", width=10, command=lambda:self.set_color("red"))
         red_btn.grid(row=0, column=1)
     
-        green_btn = Button(self, text="Зеленый", width=10)
+        green_btn = Button(self, text="Зеленый", width=10, command=lambda:self.set_color("green"))
         green_btn.grid(row=0, column=2)
     
-        blue_btn = Button(self, text="Синий", width=10)
+        blue_btn = Button(self, text="Синий", width=10, command=lambda:self.set_color("blue"))
         blue_btn.grid(row=0, column=3)
     
-        black_btn = Button(self, text="Черный", width=10)
+        black_btn = Button(self, text="Черный", width=10, command=lambda:self.set_color("black"))
         black_btn.grid(row=0, column=4)
     
-        white_btn = Button(self, text="Белый", width=10)
+        white_btn = Button(self, text="Белый", width=10, command=lambda:self.set_color("white"))
         white_btn.grid(row=0, column=5)
     
     
@@ -77,11 +78,5 @@ class print(Frame):
         twenty_btn = Button(self, text="50x", width=10)
         twenty_btn.grid(row=1, column=6, sticky=W)
 
-
-    def main():
-        root = Tk()
-        root.geometry("800x600+300+300")
-        app = print(root)
-        root.mainloop()
-    if __name__ == "__main__":
-        main()
+    
+    
