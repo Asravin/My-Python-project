@@ -1,12 +1,31 @@
 from tkinter import *
 
-class Paint(Frame):
+class print(Frame):
     def __init__(self, parent):
         Frame.__init__(self, parent)
         self.parent = parent
+        self.brush_size = 10
+        self.brush_color = "red"
+        self.color = "red"
         self.setUI()
 
 
+    def draw(self, event):
+        self.canv.create_oval(event.x - self.brush_size,
+                              event.y - self.brush_size,
+                              event.x + self.brush_size,
+                              event.y + self.brush_size,
+                              fill=self.color, outline=self.color)
+        
+    
+    def set_color(self, new_color):
+        self.color = new_color
+    
+    
+    def set_brush_size(self, new_size):
+        self.brush_size = new_size
+    
+         
     def setUI(self):
         self.parent.tittle("Simple paint")
         self.pack(fill=BOTH, expand=1)
@@ -62,8 +81,7 @@ class Paint(Frame):
     def main():
         root = Tk()
         root.geometry("800x600+300+300")
-        app = Paint(root)
+        app = print(root)
         root.mainloop()
-
     if __name__ == "__main__":
         main()
